@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skyline Weather</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="clear-day">
+  <main class="app">
+    <form id="search-form" class="search" autocomplete="off">
+      <input id="city-input" type="text" placeholder="Search for a city" aria-label="City name" required>
+      <button type="submit">Search</button>
+      <button type="button" id="locate-btn" aria-label="Use my location" title="Use my location">Locate me</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section id="current" class="current" hidden>
+      <p id="place" class="place"></p>
+      <p id="date" class="date"></p>
+      <div class="temp-row">
+        <span id="temp" class="temp">--</span>
+        <div class="unit-toggle" role="group" aria-label="Temperature unit">
+          <button id="unit-c" class="active" type="button">°C</button>
+          <button id="unit-f" type="button">°F</button>
+        </div>
+      </div>
+      <p id="condition" class="condition"></p>
+
+      <dl class="details">
+        <div><dt>Feels like</dt><dd id="feels">--</dd></div>
+        <div><dt>Humidity</dt><dd id="humidity">--</dd></div>
+        <div><dt>Wind</dt><dd id="wind">--</dd></div>
+        <div><dt>Pressure</dt><dd id="pressure">--</dd></div>
+        <div><dt>Sunrise</dt><dd id="sunrise">--</dd></div>
+        <div><dt>Sunset</dt><dd id="sunset">--</dd></div>
+      </dl>
+    </section>
+
+    <section id="forecast-wrap" class="forecast-wrap" hidden>
+      <h2>Next 5 days</h2>
+      <ul id="forecast" class="forecast"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
